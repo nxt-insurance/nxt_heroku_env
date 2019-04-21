@@ -16,6 +16,10 @@ module HerokuEnv
     define_method("#{harmonized_env_name}?") do
       self.env == harmonized_env_name.to_sym
     end
+
+    define_method(harmonized_env_name) do |&block|
+      block.call if self.env == harmonized_env_name.to_sym
+    end
   end
 
   def env

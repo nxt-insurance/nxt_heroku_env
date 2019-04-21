@@ -30,5 +30,29 @@ RSpec.describe HerokuEnv do
       expect(subject.respond_to?(:staging?)).to be_truthy
       expect(subject.respond_to?(:user_acceptance_testing?)).to be_truthy
     end
+
+    it 'answers with true or false' do
+      expect(subject.production?).to be_falsey
+      expect(subject.staging?).to be_truthy
+      expect(subject.user_acceptance_testing?).to be_falsey
+    end
+  end
+
+  describe 'env block methods', stub_env: { 'HEROKU_APP_NAME': 'myapp-s' } do
+    it 'defines env block methods' do
+      expect(subject.respond_to?(:production))
+      expect(subject.respond_to?(:staging))
+      expect(subject.respond_to?(:user_acceptance_testing))
+    end
+
+    it 'only calls the block of the env method matching the heroku env' do
+      blocks_called = []
+
+      subject.staging { blocks_called << :staging }
+      subject.production { blocks_called << :production }
+      subject.user_acceptance_testing { blocks_called << :user_acceptance_testing }
+
+      expect(blocks_called).to eq %i[staging]
+    end
   end
 end

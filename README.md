@@ -44,6 +44,22 @@ HerokuEnv.production?
 # => false
 ```
 
+There's also a method for each environment that yields a block if the environment matches the one the app runs in. This can be useful e.g. in views when a part of markup should only be rendered when the app runs in a given environment.
+
+```ruby
+HerokuEnv.staging do
+	puts "Hello world from staging"
+end
+
+# => "Hello world from staging"
+
+HerokuEnv.production do
+	puts "Hello world from production"
+end
+
+# => nil
+```
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
