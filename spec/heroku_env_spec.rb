@@ -8,9 +8,9 @@ RSpec.describe HerokuEnv do
 
   before do
     described_class.configure do |config|
-      config.add_env_suffix suffix: '-p', env_name: 'production'
-      config.add_env_suffix suffix: '-s', env_name: 'staging'
-      config.add_env_suffix suffix: '-uat', env_name: 'user acceptance testing'
+      config.add_env suffix: '-p', env: 'production'
+      config.add_env suffix: '-s', env: 'staging'
+      config.add_env suffix: '-uat', env: 'user acceptance testing'
     end
   end
 

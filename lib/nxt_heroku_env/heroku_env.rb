@@ -9,12 +9,12 @@ module HerokuEnv
     @suffix_env_mappings ||= {}
   end
 
-  def add_env_suffix(suffix:, env_name:)
-    harmonized_env_name = env_name.to_s.strip.gsub(/\s+/, "_").underscore
+  def add_env(suffix:, env:)
+    harmonized_env_name = env.to_s.strip.gsub(/\s+/, "_").underscore
     suffix_env_mappings[suffix.to_s] = harmonized_env_name.to_sym
 
     define_method("#{harmonized_env_name}?") do
-      env == harmonized_env_name.to_sym
+      self.env == harmonized_env_name.to_sym
     end
   end
 

@@ -20,7 +20,29 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+A typical application setup on heroku might have a *staging* and a *production* environment. You can set `HerokuEnv` up like this (assuming your heroku app pipelines are named something like `myapp-p` and `myapp-s` for production and staging environments respectively).
+
+```ruby
+HerokuEnv.configure do |config|
+	config.add_env suffix: '-p', env: 'production'
+	config.add_env suffix: '-s', env: 'staging'
+end
+```
+
+If you use rails, you might want to add an initializer with this content to your project (`config/initializers/heroku_env.rb`).
+
+Now you can use the DSL methods to ask for the heroku environment your app instance runs in.
+
+```ruby
+HerokuEnv.env
+# => :staging
+
+HerokuEnv.staging?
+# => true
+
+HerokuEnv.production?
+# => false
+```
 
 ## Development
 
