@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    nxt_heroku_env_constrainable (0.1.0)
+    nxt_heroku_env (0.1.0)
       activesupport
 
 GEM
@@ -47,7 +47,7 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (~> 1.17)
-  nxt_heroku_env_constrainable!
+  nxt_heroku_env!
   pry
   rake (~> 10.0)
   rspec (~> 3.0)

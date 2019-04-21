@@ -1,4 +1,4 @@
-# NxtHerokuEnvConstrainable
+# NxtHerokuEnv
 
 This gem checks the `HEROKU_APP_NAME` environment variable that is set by Heroku for any app that runs on Heroku. You can ask the helpers which environment you run in and even draw different routes depending on it. This is useful if your application should behave differently depending on whether it runs in some environment, typically production and staging for example.
 
@@ -7,7 +7,7 @@ This gem checks the `HEROKU_APP_NAME` environment variable that is set by Heroku
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'nxt_heroku_env_constrainable'
+gem 'nxt_heroku_env'
 ```
 
 And then execute:
@@ -16,7 +16,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install nxt_heroku_env_constrainable
+    $ gem install nxt_heroku_env
 
 ## Usage
 
@@ -30,7 +30,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/nxt-insurance/nxt_heroku_env_constrainable.
+Bug reports and pull requests are welcome on GitHub at https://github.com/nxt-insurance/nxt_heroku_env.
 
 ## License
 

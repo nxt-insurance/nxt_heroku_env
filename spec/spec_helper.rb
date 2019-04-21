@@ -1,5 +1,5 @@
 require "bundler/setup"
-require "nxt_heroku_env_constrainable"
+require "nxt_heroku_env"
 require "pry"
 
 RSpec.configure do |config|

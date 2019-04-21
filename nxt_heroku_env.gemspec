@@ -1,15 +1,15 @@
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "nxt_heroku_env_constrainable/version"
+require "nxt_heroku_env/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "nxt_heroku_env_constrainable"
-  spec.version       = NxtHerokuEnvConstrainable::VERSION
+  spec.name          = "nxt_heroku_env"
+  spec.version       = NxtHerokuEnv::VERSION
   spec.authors       = ["Nils Sommer", "Andreas Robecke", "Raphael Kallensee"]
   spec.email         = ["mail@nilssommer.de"]
 
   spec.summary       = %q{Helpers to ask which heroku environment an app runs in and constrain routes to be drawn depending on the environment.}
-  spec.homepage      = "https://github.com/nxt-insurance/nxt_heroku_env_constrainable"
+  spec.homepage      = "https://github.com/nxt-insurance/nxt_heroku_env"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
@@ -18,8 +18,8 @@ Gem::Specification.new do |spec|
     spec.metadata["allowed_push_host"] = "https://rubygems.org"
 
     spec.metadata["homepage_uri"] = spec.homepage
-    spec.metadata["source_code_uri"] = "https://github.com/nxt-insurance/nxt_heroku_env_constrainable"
-    spec.metadata["changelog_uri"] = "https://github.com/nxt-insurance/nxt_heroku_env_constrainable/CHANGELOG.md"
+    spec.metadata["source_code_uri"] = "https://github.com/nxt-insurance/nxt_heroku_env"
+    spec.metadata["changelog_uri"] = "https://github.com/nxt-insurance/nxt_heroku_env/CHANGELOG.md"
   else
     raise "RubyGems 2.0 or newer is required to protect against " \
       "public gem pushes."
