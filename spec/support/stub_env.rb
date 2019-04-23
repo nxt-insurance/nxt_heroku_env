@@ -1,8 +1,8 @@
 module StubEnvHelper
   def with_stubbed_env(**opts, &block)
-    values_before = opts.keys.map do |key|
-      { key => ENV[key.to_s] }
-    end.reduce({}, &:merge)
+    values_before = opts.keys.map { |key|
+      {key => ENV[key.to_s]}
+    }.reduce({}, &:merge)
 
     opts.each do |key, value|
       ENV[key.to_s] = value.to_s

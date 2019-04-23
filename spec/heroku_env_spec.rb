@@ -1,4 +1,4 @@
-require 'spec_helper'
+require "spec_helper"
 
 RSpec.describe HerokuEnv do
   # Because HerokuEnv is a singleton we clone it for
@@ -14,38 +14,38 @@ RSpec.describe HerokuEnv do
     end
   end
 
-  describe '#env' do
-    it 'discovers the env when on staging', stub_env: { 'HEROKU_APP_NAME': 'myapp-p' } do
+  describe "#env" do
+    it "discovers the env when on staging", stub_env: {'HEROKU_APP_NAME': "myapp-p"} do
       subject.env == :staging
     end
 
-    it 'discovers the env when on production', stub_env: { 'HEROKU_APP_NAME': 'myapp-uat' } do
+    it "discovers the env when on production", stub_env: {'HEROKU_APP_NAME': "myapp-uat"} do
       subject.env == :user_acceptance_testing
     end
   end
 
-  describe 'question mark accessors', stub_env: { 'HEROKU_APP_NAME': 'myapp-s' } do
-    it 'defines the question mark accessors' do
+  describe "question mark accessors", stub_env: {'HEROKU_APP_NAME': "myapp-s"} do
+    it "defines the question mark accessors" do
       expect(subject.respond_to?(:production?)).to be_truthy
       expect(subject.respond_to?(:staging?)).to be_truthy
       expect(subject.respond_to?(:user_acceptance_testing?)).to be_truthy
     end
 
-    it 'answers with true or false' do
+    it "answers with true or false" do
       expect(subject.production?).to be_falsey
       expect(subject.staging?).to be_truthy
       expect(subject.user_acceptance_testing?).to be_falsey
     end
   end
 
-  describe 'env block methods', stub_env: { 'HEROKU_APP_NAME': 'myapp-s' } do
-    it 'defines env block methods' do
+  describe "env block methods", stub_env: {'HEROKU_APP_NAME': "myapp-s"} do
+    it "defines env block methods" do
       expect(subject.respond_to?(:production))
       expect(subject.respond_to?(:staging))
       expect(subject.respond_to?(:user_acceptance_testing))
     end
 
-    it 'only calls the block of the env method matching the heroku env' do
+    it "only calls the block of the env method matching the heroku env" do
       blocks_called = []
 
       subject.staging { blocks_called << :staging }

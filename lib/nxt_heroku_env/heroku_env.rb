@@ -2,7 +2,7 @@ module HerokuEnv
   extend self
 
   def app_name
-    ENV['HEROKU_APP_NAME'].presence
+    ENV["HEROKU_APP_NAME"].presence
   end
 
   def heroku_app_name_to_env_mappings
@@ -15,20 +15,20 @@ module HerokuEnv
       heroku_app_name_to_env_mappings[app_name_pattern] = env_name.to_sym
 
       define_method("#{env_name}?") do
-        self.env == env_name.to_sym
+        env == env_name.to_sym
       end
 
       define_method(env_name) do |&block|
-        block.call if self.env == env_name.to_sym
+        block.call if env == env_name.to_sym
       end
     end
   end
 
   def env
     @env ||= begin
-      env_name = heroku_app_name_to_env_mappings.keys.find do |heroku_app_name_pattern|
+      env_name = heroku_app_name_to_env_mappings.keys.find { |heroku_app_name_pattern|
         heroku_app_name_pattern.match?(app_name)
-      end
+      }
 
       heroku_app_name_to_env_mappings[env_name]
     end

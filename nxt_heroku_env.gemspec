@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Nils Sommer", "Andreas Robecke", "Raphael Kallensee"]
   spec.email         = ["mail@nilssommer.de"]
 
-  spec.summary       = %q{Helpers to ask which heroku environment an app runs in and constrain routes to be drawn depending on the environment.}
+  spec.summary       = "Helpers to ask which heroku environment an app runs in and constrain routes to be drawn depending on the environment."
   spec.homepage      = "https://github.com/nxt-insurance/nxt_heroku_env"
   spec.license       = "MIT"
 
@@ -27,7 +27,7 @@ Gem::Specification.new do |spec|
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
-  spec.files         = Dir.chdir(File.expand_path('..', __FILE__)) do
+  spec.files = Dir.chdir(File.expand_path("..", __FILE__)) do
     `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   end
   spec.bindir        = "exe"
@@ -40,6 +40,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rspec", "~> 3.0"
   spec.add_development_dependency "stub_env"
   spec.add_development_dependency "standard"
-  
+
   spec.add_dependency "activesupport"
 end
