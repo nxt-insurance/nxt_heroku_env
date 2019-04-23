@@ -24,8 +24,8 @@ A typical application setup on heroku might have a *staging* and a *production* 
 
 ```ruby
 HerokuEnv.configure do |config|
-	config.add_env suffix: '-p', env: 'production'
-	config.add_env suffix: '-s', env: 'staging'
+	config.add_env production: /myapp-p/
+	config.add_env staging: /myapp-s/
 end
 ```
 
