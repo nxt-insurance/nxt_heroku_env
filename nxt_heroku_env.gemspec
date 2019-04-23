@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Nils Sommer", "Andreas Robecke", "Raphael Kallensee"]
   spec.email         = ["mail@nilssommer.de"]
 
-  spec.summary       = "Helpers to ask which heroku environment an app runs in and constrain routes to be drawn depending on the environment."
+  spec.summary       = "Helpers to ask which heroku environment an app runs in."
   spec.homepage      = "https://github.com/nxt-insurance/nxt_heroku_env"
   spec.license       = "MIT"
 
