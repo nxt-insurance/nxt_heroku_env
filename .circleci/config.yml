@@ -31,8 +31,8 @@ jobs:
 
       # Run code style linter!
       - run:
-        name: run code style linter
-        command: bundle exec standardrb
+          name: run code style linter
+          command: bundle exec standardrb
 
       # run tests!
       - run:
