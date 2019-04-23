@@ -30,7 +30,7 @@ jobs:
           key: v1-dependencies-{{ checksum "Gemfile.lock" }}
 
       # Run code style linter!
-      -run:
+      - run:
         name: run code style linter
         command: bundle exec standardrb
 
