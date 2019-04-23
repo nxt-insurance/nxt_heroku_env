@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/nxt-insurance/nxt_heroku_env.svg?style=svg)](https://circleci.com/gh/nxt-insurance/nxt_heroku_env)
+
 # NxtHerokuEnv
 
 This gem checks the `HEROKU_APP_NAME` environment variable that is set by Heroku for any app that runs on Heroku. You can ask the helpers which environment you run in and even draw different routes depending on it. This is useful if your application should behave differently depending on whether it runs in some environment, typically production and staging for example.
