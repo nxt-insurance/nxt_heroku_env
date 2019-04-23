@@ -6,5 +6,5 @@ git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 gemspec
 
 group :test do
-  gem 'rspec_junit_formatter' # for CircleCI
+  gem "rspec_junit_formatter" # for CircleCI
 end
