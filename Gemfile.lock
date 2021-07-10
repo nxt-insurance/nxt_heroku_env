@@ -30,7 +30,7 @@ GEM
       method_source (~> 1.0)
     psych (3.1.0)
     rainbow (3.0.0)
-    rake (13.0.1)
+    rake (13.0.6)
     rspec (3.10.0)
       rspec-core (~> 3.10.0)
       rspec-expectations (~> 3.10.0)
